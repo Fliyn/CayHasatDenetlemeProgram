@@ -1,0 +1,721 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+    background: #D3CDCD;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.container .wave {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    z-index: -1;
+}
+
+.nav-bar {
+    position: fixed;
+    background: #222831;
+    width: 350px;
+    min-height: 100vh;
+    transform: translateX(-100%);
+    z-index: 10;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.nav-bar.active {
+    box-shadow: 8px 0px 12px rgba(0, 0, 0, 0.25);
+    transform: translateX(0%);
+}
+
+.nav-bar ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-bar ul li {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul li:first-child {
+    margin: 60px 0 70px;
+    justify-content: center;
+}
+
+.nav-bar ul li:last-child {
+    margin-top: auto;
+}
+
+.nav-bar ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar ul li a .icon {
+    font-size: 24px;
+    margin-right: 20px;
+    color: #00818A;
+}
+
+header {
+    background: #00818A;
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .hamburger-btn {
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+}
+
+header .hamburger-btn .fas,
+.t-container .hamburger-btn .fas,
+.t-container-admin .hamburger-btn .fas {
+    font-size: 30px;
+    padding: 5px;
+    color: #ffffff;
+}
+
+.t-container .hamburger-btn,
+.t-container-admin .hamburger-btn {
+    position: fixed;
+    left: 10px;
+    top: 20px;
+}
+
+.t-container .hamburger-btn .fas {
+    font-size: 1.5rem;
+}
+
+header .profile-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .profile-box .profile {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+main {
+    height: calc(100vh - 9vh - 70px);
+}
+
+main .date-box {
+    width: 30%;
+    height: 3vh;
+}
+
+main form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(9, 100px);
+    place-items: center;
+    overflow: auto;
+}
+
+main .gridtable {
+    grid-row: 9 / 7;
+}
+
+main .date-box .select-box,
+main form .select-box {
+    width: 100%;
+    height: 30%;
+    background: #096E3B;
+    color: #ffffff;
+    padding: 0 5px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+main form .select-box {
+    width: 50%;
+}
+
+.select-box[name="yillar"] {
+    background: #f2a365;
+}
+
+.select-box[name="sürgün"] {
+    background: #e94560;
+}
+
+.select-box[name="Vade_yılı"] {
+    background: #a7d129;
+}
+
+form select.hidden-box {
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+#dis {
+    width: 50%;
+    height: 30px;
+    background: tomato;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+}
+
+input[type="checkbox"]:checked~select.hidden-box {
+    display: block;
+}
+
+main .company {
+    width: 50%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .company input {
+    width: 100%;
+    height: 100%;
+    border-radius: 45px;
+    font-size: 15px;
+    padding: 0 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main .company input::placeholder {
+    color: #222;
+}
+
+main .tea-input,
+.spnd-input,
+.kind-box {
+    width: 50%;
+    height: 40px;
+}
+
+main .spnd-input {
+    width: 50%;
+}
+
+main .tea-input input,
+.spnd-input input,
+.kind-box input {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    background: rgba(0, 129, 138, 0.39);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.price-box {
+    width: 50%;
+    height: 40px;
+}
+
+.price-box input {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    color: white;
+    background: #222831;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+main input::placeholder {
+    color: #ffffff;
+}
+
+main .spending-btn {
+    width: 50%;
+    height: 5vh;
+}
+
+main .spending-btn .spending {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main .insert-btn {
+    width: 25%;
+    height: 30px;
+}
+
+main .insert-btn .insert {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.operation-btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+.operation-btn a {
+    display: block;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.operation-btn a:nth-child(1) {
+    background: #096E3B;
+    color: #ffffff;
+}
+
+.operation-btn a:nth-child(2) {
+    background: #222831;
+    color: #ffffff;
+}
+
+.operation-btn a:nth-child(3) {
+    background: #00818A;
+    color: #ffffff;
+}
+
+.container .alpha {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+#statisticmain {
+    height: calc(100vh - 9vh);
+}
+
+#statistic-form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#statistic-form .gridtable2 {
+    grid-row: 1 / 4;
+}
+
+#statisticmain button {
+    padding: 10px 30px;
+    background: white;
+    border-radius: 5px;
+}
+
+
+/* #statisticmain canvas {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#statisticmain canvas:nth-child(1) {
+    grid-row: 1/2;
+}
+
+#statisticmain canvas:nth-child(2) {
+    grid-row: 2/3;
+}
+
+#statisticmain canvas:nth-child(3) {
+    grid-row: 3/4;
+} */
+
+.operation-btn a {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operation-btn a:nth-child(1) {
+    background: #096E3B;
+    color: #ffffff;
+}
+
+.operation-btn a:nth-child(2) {
+    background: #222831;
+    color: #ffffff;
+}
+
+.operation-btn a:nth-child(3) {
+    background: #00818A;
+    color: #ffffff;
+}
+
+main .chose-garden {
+    width: 50%;
+    height: 40px;
+}
+
+main .chose-garden #garden {
+    width: 100%;
+    height: 100%;
+    background: #00818A;
+    color: white;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+main .place-box,
+.year-box,
+.garden-box,
+.season-box {
+    width: 100%;
+    height: 500px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .place-input,
+.year-input,
+.garden-input,
+.season-input {
+    width: 50%;
+    height: 40px;
+}
+
+main .place-input input,
+.year-input input,
+.garden-input input,
+.season-input input {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+main .place-input input::placeholder,
+.year-input input::placeholder,
+.garden-input input::placeholder,
+.season-input input::placeholder {
+    color: black;
+}
+
+main .place-btn,
+.year-btn,
+.garden-btn,
+.season-btn {
+    padding: 10px 50px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+main .place-btn:hover,
+.year-btn:hover,
+.garden-btn:hover,
+.season-btn:hover {
+    background: #535C65;
+    color: white;
+}
+
+main .place-btn:active,
+.year-btn:active,
+.garden-btn:active,
+.season-btn:active {
+    transform: scale(0.9);
+}
+
+main .bottom-tab,
+.operation-btn {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+textarea {
+    width: 50%;
+    height: 50px;
+    resize: none;
+    border: 1px solid #00818A;
+    border-radius: 5px;
+    padding: 0.5rem;
+    transition: height 0.5s;
+}
+
+textarea:focus {
+    height: 80px;
+}
+
+main .bottom-tab .bottom {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .bottom-tab .bottom .bottom-link,
+.bottom-link a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .bottom-tab .bottom .bottom-link a {
+    background: #096E3B;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    flex-direction: column;
+    transition: all 0.1s linear;
+}
+
+main .bottom-tab .bottom .bottom-link a:hover {
+    background: #222831;
+    color: #096E3B;
+}
+
+.t-container {
+    background: #1D976C;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.t-content {
+    width: 85%;
+}
+
+.inner-table {
+    width: 100%;
+    height: 40%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.01);
+    color: #222;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+.t-container-admin {
+    background: #00818A;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.inner-table-admin {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+}
+
+.edit-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-box input {
+    width: 100%;
+    height: 100%;
+}
+
+.inner-table th,
+.inner-table-admin th {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.inner-table tr:not(:first-child),
+.inner-table-admin tr:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.edit-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.edit-btn button {
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    header .date-box {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #chartmain {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: max-content;
+        padding: 3rem 8rem 0rem;
+    }
+    #chartmain canvas {
+        background: #ffffff;
+        padding: 0rem 2rem;
+        margin-bottom: 5rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container .wave {
+        position: absolute;
+        bottom: 0%;
+        right: 0%;
+        width: 60%;
+        z-index: -1;
+    }
+    .nav-bar {
+        position: fixed;
+        background: #222831;
+        width: 75px;
+        min-height: 100vh;
+        transform: translateX(0%);
+        z-index: 10;
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+    .nav-bar.active {
+        box-shadow: 8px 0px 12px rgba(0, 0, 0, 0.25);
+        width: 350px;
+    }
+    .nav-bar ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .nav-bar ul li {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+    .nav-bar ul li:first-child {
+        visibility: hidden;
+    }
+    .nav-bar ul li:last-child {
+        margin-top: auto;
+    }
+    .nav-bar ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 25px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+    .nav-bar ul li a .icon {
+        font-size: 24px;
+        margin-right: 30px;
+        color: #00818A;
+    }
+    .nav-bar ul li:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    main .operation-btn a:hover {
+        transform: scale(1.02);
+    }
+    .container .alpha {
+        transition: all 0.5s;
+    }
+    main .bottom-tab,
+    .operation-btn {
+        right: 0;
+        width: calc(100% - 75px);
+    }
+}
